@@ -1,0 +1,127 @@
+/* 
+  ECMS Design System 
+  Core Tokens & Variables
+*/
+
+:root {
+  /* =========================
+     Color Palette (HSL)
+     ========================= */
+  
+  /* Primary Brand */
+  --hue-primary: 243;
+  --sat-primary: 75%;
+  --lig-primary: 59%;
+  --color-primary: hsl(var(--hue-primary), var(--sat-primary), var(--lig-primary));
+  --color-primary-hover: hsl(var(--hue-primary), var(--sat-primary), 49%);
+  --color-primary-light: hsl(var(--hue-primary), var(--sat-primary), 95%);
+  --color-primary-alpha: hsla(var(--hue-primary), var(--sat-primary), var(--lig-primary), 0.1);
+
+  /* Secondary Brand */
+  --hue-secondary: 189;
+  --sat-secondary: 94%;
+  --lig-secondary: 43%;
+  --color-secondary: hsl(var(--hue-secondary), var(--sat-secondary), var(--lig-secondary));
+  
+  /* Neutrals (Slate) */
+  --hue-neutral: 210;
+  --sat-neutral: 20%;
+  --color-surface-50: hsl(var(--hue-neutral), var(--sat-neutral), 98%);
+  --color-surface-100: hsl(var(--hue-neutral), var(--sat-neutral), 94%);
+  --color-surface-200: hsl(var(--hue-neutral), var(--sat-neutral), 86%);
+  --color-surface-300: hsl(var(--hue-neutral), var(--sat-neutral), 70%); /* Borders */
+  --color-text-body: hsl(var(--hue-neutral), var(--sat-neutral), 30%);
+  --color-text-heading: hsl(var(--hue-neutral), var(--sat-neutral), 15%);
+  --color-text-inverse: hsl(0, 0%, 100%);
+
+  /* Semantic / Status */
+  --color-success: hsl(150, 60%, 45%);
+  --color-warning: hsl(40, 90%, 55%);
+  --color-danger: hsl(340, 70%, 50%);
+  --color-danger-bg: hsl(340, 70%, 95%);
+
+  /* =========================
+     Typography
+     ========================= */
+  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-mono: 'JetBrains Mono', monospace;
+
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+  --font-size-4xl: 2.25rem;   /* 36px */
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-base: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* =========================
+     Spacing System (4px Grid)
+     ========================= */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+
+  /* =========================
+     Effects & Borders
+     ========================= */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  --transition-base: all 0.2s ease-in-out;
+  --focus-ring: 0 0 0 3px var(--color-primary-alpha);
+}
+
+/* Base Reset & Setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-surface-50);
+  color: var(--color-text-body);
+  line-height: var(--line-height-base);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-heading);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
