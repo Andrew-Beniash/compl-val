@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: PCI Summary | ECMS</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body style="background-color: var(--color-surface-50); min-height: 100vh;">
+
+  <!-- Top Bar -->
+  <div
+    style="background: white; border-bottom: 1px solid var(--color-surface-200); padding: var(--space-4); position: sticky; top: 0; z-index: 100;"
+    class="no-print">
+    <div class="container flex-item-center" style="justify-content: space-between;">
+      <div class="flex-item-center gap-4">
+        <button class="btn btn-secondary btn-icon-only" onclick="window.location.href='reports-list.html'"><span
+            class="material-symbols-outlined">arrow_back</span></button>
+        <div>
+          <div style="font-weight: 500;">PCI Compliance Summary - Q1 2026.pdf</div>
+          <div class="text-xs text-muted">Preview Mode</div>
+        </div>
+      </div>
+      <div class="flex-item-center gap-2">
+        <button class="btn btn-secondary" onclick="window.print()"><span class="material-symbols-outlined">print</span>
+          Print</button>
+        <button class="btn btn-primary"><span class="material-symbols-outlined">download</span> Download PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Document Preview -->
+  <div style="padding: var(--space-8) 0;">
+    <div class="report-document">
+
+      <header class="report-header">
+        <div>
+          <div
+            style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--color-primary); letter-spacing: -0.5px;">
+            ECMS Report</div>
+          <div class="text-muted" style="margin-top: var(--space-2);">Enterprise Compliance Management System</div>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-weight: bold;">CONFIDENTIAL</div>
+          <div class="text-sm">Generated: Feb 02, 2026</div>
+        </div>
+      </header>
+
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h1 style="font-size: 32px; margin-bottom: var(--space-4);">Compliance Assessment Summary</h1>
+        <h2 style="font-size: 24px; font-weight: 400; color: var(--color-text-body);">Payment Gateway SDK</h2>
+        <div
+          style="margin-top: var(--space-4); display: inline-block; padding: var(--space-2) var(--space-6); background: var(--color-surface-100); border-radius: 50px;">
+          Framework: PCI-DSS v4.0.1
+        </div>
+      </div>
+
+      <!-- Executive Summary -->
+      <section class="report-section">
+        <h3 class="report-section-title">1. Executive Summary</h3>
+        <p style="line-height: 1.6; margin-bottom: var(--space-4);">
+          This report details the compliance status of the <strong>Payment Gateway SDK</strong> against the
+          <strong>PCI-DSS v4.0.1</strong> standard.
+          The assessment was conducted using automated analysis tools and manual questionnaire responses.
+        </p>
+        <div style="display: flex; gap: var(--space-6);">
+          <div class="score-card" style="flex: 1; padding: var(--space-4);">
+            <div class="text-sm text-muted">Overall Score</div>
+            <div class="score-grade A" style="font-size: 3rem;">A</div>
+            <div style="font-weight: bold;">95/100</div>
+          </div>
+          <div class="card"
+            style="flex: 2; display: flex; flex-direction: column; justify-content: center; background: var(--color-surface-50); border: none;">
+            <div class="flex-item-center justify-between mb-2">
+              <span>Passing Requirements</span>
+              <span class="badge badge-success">232</span>
+            </div>
+            <div class="flex-item-center justify-between mb-2">
+              <span>Risks Identified</span>
+              <span class="badge badge-warning">5</span>
+            </div>
+            <div class="flex-item-center justify-between">
+              <span>Failing</span>
+              <span class="badge badge-danger">0</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Risk Highlights -->
+      <section class="report-section">
+        <h3 class="report-section-title">2. Risk Highlights</h3>
+        <table class="data-table" style="font-size: var(--font-size-sm);">
+          <thead style="background: var(--color-surface-100);">
+            <tr>
+              <th>Severity</th>
+              <th>Requirement</th>
+              <th>Finding</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge badge-warning">Medium</span></td>
+              <td>Req 6.5</td>
+              <td>Potential SQL Injection pattern in legacy query builder (Line 42).</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-warning">Medium</span></td>
+              <td>Req 8.2</td>
+              <td>MFA not enforced for internal staging environment access.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Detailed Findings -->
+      <section class="report-section">
+        <h3 class="report-section-title">3. Detailed Findings</h3>
+        <p class="text-sm text-muted mb-4">The following section lists specific technical findings from the automated
+          code analysis.</p>
+
+        <div style="margin-bottom: var(--space-6);">
+          <h4 style="font-weight: 600; margin-bottom: var(--space-2);">3.1 Network Security (Req 1.x)</h4>
+          <div
+            style="background: var(--color-surface-50); padding: var(--space-3); border-left: 3px solid var(--color-success);">
+            <div class="flex-item-center justify-between">
+              <span style="font-weight: 500;">1.1 Firewall Configuration</span>
+              <span class="badge badge-success">Pass</span>
+            </div>
+            <p class="text-sm mt-2">Verified via Terraform (aws_security_group.payment_gateway_sg). Ingress restricted
+              to port 443.</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom: var(--space-6);">
+          <h4 style="font-weight: 600; margin-bottom: var(--space-2);">3.2 Data Protection (Req 3.x)</h4>
+          <div
+            style="background: var(--color-surface-50); padding: var(--space-3); border-left: 3px solid var(--color-success);">
+            <div class="flex-item-center justify-between">
+              <span style="font-weight: 500;">3.4 PAN Encryption</span>
+              <span class="badge badge-success">Pass</span>
+            </div>
+            <p class="text-sm mt-2">Verified via Java Code Analysis. AES-256 encryption used for all data field storage.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer
+        style="margin-top: 60px; padding-top: var(--space-4); border-top: 1px solid var(--color-surface-200); text-align: center; font-size: var(--font-size-xs); color: var(--color-text-muted);">
+        ECMS Generated Report • ID: RPT-2026-0042 • Page 1 of 1
+      </footer>
+
+    </div>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

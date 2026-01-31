@@ -154,9 +154,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    // Fake Generation Logic
+    const initReportFilter = () => {
+        const genBtn = document.getElementById('generate-report-btn');
+        if (genBtn) {
+            genBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const overlay = document.querySelector('.loading-overlay');
+                if (overlay) {
+                    overlay.classList.add('active');
+                    setTimeout(() => {
+                        window.location.href = 'reports-list.html';
+                    }, 2000);
+                }
+            });
+        }
+    }
+
     initDropdowns();
     initMultiSelect();
     initMobileNav();
     initTabs();
     initModals();
+    initReportFilter();
 });

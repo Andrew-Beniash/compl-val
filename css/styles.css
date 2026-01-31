@@ -1046,3 +1046,106 @@ input:checked + .toggle-slider:before {
 .bg-danger { background-color: var(--color-danger); }
 .bg-gray { background-color: #94a3b8; }
 
+
+/* =========================
+   Report Generation & Preview
+   ========================= */
+
+/* Document Preview (Paper look) */
+.report-document {
+  background: white;
+  width: 100%;
+  max-width: 210mm; /* A4 width approx */
+  min-height: 297mm; /* A4 height approx */
+  margin: 0 auto;
+  padding: 40px 60px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+@media print {
+  .report-document {
+    box-shadow: none;
+    margin: 0;
+    width: 100%;
+    max-width: none;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+.report-header {
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: var(--space-6);
+  margin-bottom: var(--space-8);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.report-section {
+  margin-bottom: var(--space-8);
+}
+
+.report-section-title {
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+  color: var(--color-secondary);
+  border-bottom: 1px solid var(--color-surface-200);
+  padding-bottom: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+/* File Type Icons */
+.file-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  font-weight: bold;
+  font-size: 10px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.file-icon.pdf { background-color: #ef4444; }
+.file-icon.xls { background-color: #10b981; }
+
+/* Loading Spinner */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.loading-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--color-surface-200);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

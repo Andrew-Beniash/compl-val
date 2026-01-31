@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Report | ECMS</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+  <div class="loading-overlay">
+    <div class="spinner"></div>
+    <div style="margin-top: var(--space-4); font-weight: 500;">Generating Report...</div>
+  </div>
+
+  <div class="main-layout">
+    <header class="app-header">
+      <div class="container nav-container">
+        <div class="flex-item-center gap-2">
+          <a href="../dashboard.html" class="brand">
+            <span class="material-symbols-outlined brand-icon">verified_user</span> ECMS
+          </a>
+        </div>
+        <div class="user-profile">
+          <button class="avatar-btn">
+            <div class="avatar">JD</div>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top: var(--space-8); padding-bottom: var(--space-8); max-width: 800px;">
+
+      <nav class="breadcrumb">
+        <a href="reports-list.html" class="breadcrumb-item">Reports</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-item active">Generate Report</span>
+      </nav>
+
+      <h1 style="margin-bottom: var(--space-6);">Generate New Report</h1>
+
+      <form class="card">
+        <!-- Data Selection -->
+        <div class="mb-4">
+          <h3
+            style="font-size: var(--font-size-lg); margin-bottom: var(--space-4); padding-bottom: var(--space-2); border-bottom: 1px solid var(--color-surface-200);">
+            Data Scope</h3>
+
+          <div class="form-group">
+            <label class="form-label">Product</label>
+            <select class="form-select">
+              <option>Payment Gateway SDK</option>
+              <option>Auth Service</option>
+              <option>Marketing Site</option>
+              <option>Legacy Billing</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Frameworks</label>
+            <!-- Custom Multi-Select -->
+            <div class="multi-select-container">
+              <div class="multi-select-trigger">
+                <span>Select frameworks...</span>
+                <span class="material-symbols-outlined" style="font-size: 18px;">expand_more</span>
+              </div>
+              <div class="multi-select-dropdown">
+                <label class="multi-select-option">
+                  <input type="checkbox" checked> PCI-DSS v4.0.1
+                </label>
+                <label class="multi-select-option">
+                  <input type="checkbox"> GDPR
+                </label>
+                <label class="multi-select-option">
+                  <input type="checkbox"> SOC 2
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Format -->
+        <div class="mb-4">
+          <h3
+            style="font-size: var(--font-size-lg); margin-bottom: var(--space-4); padding-bottom: var(--space-2); border-bottom: 1px solid var(--color-surface-200);">
+            Format Options</h3>
+
+          <div class="form-group">
+            <label class="form-label" style="display: block; margin-bottom: var(--space-3);">Output Format</label>
+            <div class="flex-item-center gap-4">
+              <label class="form-check">
+                <input type="checkbox" class="form-check-input" checked>
+                <span class="form-check-label flex-item-center gap-2">
+                  <span class="file-icon pdf">PDF</span> Document
+                </span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" class="form-check-input">
+                <span class="form-check-label flex-item-center gap-2">
+                  <span class="file-icon xls">XLS</span> Spreadsheet
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" style="display: block; margin-bottom: var(--space-3);">Include Details</label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2);">
+              <label class="form-check">
+                <input type="checkbox" class="form-check-input" checked>
+                <span class="form-check-label">Detailed Findings</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" class="form-check-input" checked>
+                <span class="form-check-label">Code References</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" class="form-check-input" checked>
+                <span class="form-check-label">Questionnaire Metadata</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" class="form-check-input">
+                <span class="form-check-label">Raw JSON Logs</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-item-center"
+          style="justify-content: flex-end; gap: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--color-surface-200);">
+          <button type="button" class="btn btn-secondary" onclick="window.history.back()">Cancel</button>
+          <button type="button" id="generate-report-btn" class="btn btn-primary">Generate Report</button>
+        </div>
+      </form>
+    </main>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

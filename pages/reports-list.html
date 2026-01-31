@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports | ECMS</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+  <div class="main-layout">
+    <header class="app-header">
+      <div class="container nav-container">
+        <div class="flex-item-center gap-2">
+          <button class="mobile-toggle"><span class="material-symbols-outlined">menu</span></button>
+          <a href="../dashboard.html" class="brand">
+            <span class="material-symbols-outlined brand-icon">verified_user</span> ECMS
+          </a>
+        </div>
+        <nav class="nav-links">
+          <a href="../dashboard.html" class="nav-link">Dashboard</a>
+          <a href="products-list.html" class="nav-link">Products</a>
+          <a href="frameworks-list.html" class="nav-link">Frameworks</a>
+          <a href="questionnaires-list.html" class="nav-link">Questionnaires</a>
+          <a href="reports-list.html" class="nav-link active">Reports</a>
+        </nav>
+        <div class="user-profile">
+          <button class="avatar-btn" data-dropdown-trigger="user-dropdown">
+            <div class="avatar">JD</div>
+          </button>
+          <div id="user-dropdown" class="dropdown-menu">
+            <a href="login.html" class="dropdown-item" style="color: var(--color-danger);">Sign Out</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top: var(--space-8); padding-bottom: var(--space-8);">
+      <!-- Page Header -->
+      <div class="flex-item-center" style="justify-content: space-between; margin-bottom: var(--space-6);">
+        <div>
+          <nav class="breadcrumb">
+            <a href="../dashboard.html" class="breadcrumb-item">Dashboard</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-item active">Reports</span>
+          </nav>
+          <h1>Report Archive</h1>
+        </div>
+        <button class="btn btn-primary" onclick="window.location.href='report-generate.html'">
+          <span class="material-symbols-outlined">add_chart</span> Generate New Report
+        </button>
+      </div>
+
+      <!-- Filters -->
+      <div class="filter-bar">
+        <div class="search-input-wrapper">
+          <span class="material-symbols-outlined search-icon">search</span>
+          <input type="text" class="form-input search-input" placeholder="Search reports...">
+        </div>
+        <div style="min-width: 150px;">
+          <select class="form-select">
+            <option value="">Framework: All</option>
+            <option value="pci">PCI-DSS</option>
+            <option value="soc2">SOC 2</option>
+          </select>
+        </div>
+        <div style="min-width: 150px;">
+          <input type="date" class="form-input" style="padding: 6px 12px; font-size: 13px;">
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Report Name</th>
+              <th>Product</th>
+              <th>Frameworks</th>
+              <th>Type</th>
+              <th>Generated</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Row 1 -->
+            <tr>
+              <td>
+                <a href="report-preview.html" style="font-weight: 500; color: var(--color-text-heading);">PCI Compliance
+                  Summary - Q1 2026</a>
+              </td>
+              <td>Payment Gateway SDK</td>
+              <td><span class="badge" style="border: 1px solid #cbd5e1;">PCI-DSS v4.0.1</span></td>
+              <td><span class="file-icon pdf">PDF</span></td>
+              <td class="text-muted">Feb 02, 2026</td>
+              <td>
+                <div class="flex-item-center gap-2" style="justify-content: flex-end;">
+                  <button class="btn btn-icon-only" style="padding: 4px;"
+                    onclick="window.location.href='report-preview.html'"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">visibility</span></button>
+                  <button class="btn btn-icon-only" style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">download</span></button>
+                </div>
+              </td>
+            </tr>
+            <!-- Row 2 -->
+            <tr>
+              <td>
+                <a href="#" style="font-weight: 500; color: var(--color-text-heading);">Full Audit Trail Export</a>
+              </td>
+              <td>Auth Service</td>
+              <td>
+                <div class="flex-item-center gap-1">
+                  <span class="badge" style="border: 1px solid #cbd5e1;">SOC 2</span>
+                  <span class="badge" style="border: 1px solid #cbd5e1;">GDPR</span>
+                </div>
+              </td>
+              <td><span class="file-icon xls">XLS</span></td>
+              <td class="text-muted">Jan 15, 2026</td>
+              <td>
+                <div class="flex-item-center gap-2" style="justify-content: flex-end;">
+                  <button class="btn btn-icon-only" style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">visibility</span></button>
+                  <button class="btn btn-icon-only" style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">download</span></button>
+                </div>
+              </td>
+            </tr>
+            <!-- Row 3 -->
+            <tr>
+              <td>
+                <a href="#" style="font-weight: 500; color: var(--color-text-heading);">Executive Risk Brief</a>
+              </td>
+              <td>Customer Data Platform</td>
+              <td><span class="badge" style="border: 1px solid #cbd5e1;">GDPR</span></td>
+              <td><span class="file-icon pdf">PDF</span></td>
+              <td class="text-muted">Dec 20, 2025</td>
+              <td>
+                <div class="flex-item-center gap-2" style="justify-content: flex-end;">
+                  <button class="btn btn-icon-only" style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">visibility</span></button>
+                  <button class="btn btn-icon-only" style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">download</span></button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>
