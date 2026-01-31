@@ -885,3 +885,164 @@ input:checked + .toggle-slider:before {
   justify-content: flex-end;
   gap: var(--space-4);
 }
+
+/* =========================
+   Questionnaires / Uploads
+   ========================= */
+
+/* File Upload Area */
+.upload-area {
+  border: 2px dashed var(--color-surface-300);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  text-align: center;
+  background-color: var(--color-surface-50);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.upload-area:hover {
+  border-color: var(--color-primary);
+  background-color: #f0f9ff; /* Light blue tint */
+}
+
+.upload-icon {
+  font-size: 48px;
+  color: var(--color-surface-400);
+  margin-bottom: var(--space-4);
+}
+
+/* Multi-select Mockup */
+.multi-select-container {
+  position: relative;
+}
+
+.multi-select-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-surface-300);
+  border-radius: var(--radius-md);
+  background: white;
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-body);
+}
+
+.multi-select-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid var(--color-surface-300);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  z-index: 10;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: var(--space-1);
+}
+
+.multi-select-dropdown.show {
+  display: block;
+}
+
+.multi-select-option {
+  padding: var(--space-2) var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+}
+
+.multi-select-option:hover {
+  background-color: var(--color-surface-50);
+}
+
+/* =========================
+   Compliance Reports & details
+   ========================= */
+
+/* Score Card */
+.score-card {
+  text-align: center;
+  padding: var(--space-6);
+  border: 1px solid var(--color-surface-200);
+  border-radius: var(--radius-lg);
+  background: white;
+}
+
+.score-grade {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.score-grade.A { color: var(--color-success); }
+.score-grade.B { color: var(--color-primary); }
+.score-grade.C { color: var(--color-warning); }
+.score-grade.D, .score-grade.F { color: var(--color-danger); }
+
+/* Code Reference Block */
+.code-block {
+  background: #1e293b;
+  color: #f1f5f9;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: var(--font-size-sm);
+  overflow-x: auto;
+  margin-top: var(--space-2);
+}
+
+.code-ref-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #334155;
+  padding-bottom: var(--space-2);
+  margin-bottom: var(--space-2);
+  color: #94a3b8;
+  font-size: var(--font-size-xs);
+}
+
+/* Audit Trail */
+.audit-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.audit-item {
+  display: flex;
+  gap: var(--space-3);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-surface-100);
+}
+
+.audit-item:last-child {
+  border-bottom: none;
+}
+
+/* Progress Bars for Dashboard */
+.progress-stacked {
+  display: flex;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: var(--color-surface-100);
+  width: 100%;
+}
+
+.progress-bar {
+  height: 100%;
+}
+
+.bg-success { background-color: var(--color-success); }
+.bg-warning { background-color: var(--color-warning); }
+.bg-danger { background-color: var(--color-danger); }
+.bg-gray { background-color: #94a3b8; }
+

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results: Payment Gateway | ECMS</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+  <div class="main-layout">
+    <header class="app-header">
+      <div class="container nav-container">
+        <div class="flex-item-center gap-2">
+          <button class="mobile-toggle"><span class="material-symbols-outlined">menu</span></button>
+          <a href="../dashboard.html" class="brand">
+            <span class="material-symbols-outlined brand-icon">verified_user</span> ECMS
+          </a>
+        </div>
+        <nav class="nav-links">
+          <a href="../dashboard.html" class="nav-link">Dashboard</a>
+          <a href="products-list.html" class="nav-link">Products</a>
+          <a href="frameworks-list.html" class="nav-link">Frameworks</a>
+          <a href="questionnaires-list.html" class="nav-link">Questionnaires</a>
+          <a href="compliance-dashboard.html" class="nav-link active">Reports</a>
+        </nav>
+        <div class="user-profile">
+          <button class="avatar-btn" data-dropdown-trigger="user-dropdown">
+            <div class="avatar">JD</div>
+          </button>
+          <div id="user-dropdown" class="dropdown-menu">
+            <a href="login.html" class="dropdown-item" style="color: var(--color-danger);">Sign Out</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top: var(--space-8); padding-bottom: var(--space-8);">
+
+      <!-- Header -->
+      <div class="flex-item-center"
+        style="justify-content: space-between; margin-bottom: var(--space-6); flex-wrap: wrap; gap: var(--space-4);">
+        <div>
+          <nav class="breadcrumb">
+            <a href="compliance-dashboard.html" class="breadcrumb-item">Reports</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="product-compliance-detail.html" class="breadcrumb-item active">Payment Gateway SDK</a>
+          </nav>
+          <div class="flex-item-center gap-2">
+            <h1>Payment Gateway SDK</h1>
+            <span class="badge badge-success">Passing</span>
+          </div>
+        </div>
+        <div class="flex-item-center gap-2">
+          <button class="btn btn-primary"><span class="material-symbols-outlined">download</span> Download PDF</button>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-6);">
+
+        <!-- Main Results -->
+        <div>
+          <!-- Framework Tabs -->
+          <div class="tabs-container mb-6">
+            <div class="tabs">
+              <button class="tab-btn active" data-tab="pci">PCI-DSS v4.0.1</button>
+              <button class="tab-btn" data-tab="internal">Internal Sec</button>
+            </div>
+
+            <div id="pci" class="tab-content active">
+              <div class="card">
+                <div class="flex-item-center" style="justify-content: space-between; margin-bottom: var(--space-4);">
+                  <h3 class="card-title">Requirement Status</h3>
+                  <div class="flex-item-center gap-4 text-sm">
+                    <div class="flex-item-center gap-1"><span class="status-indicator bg-success"></span> Fully
+                      Supported</div>
+                    <div class="flex-item-center gap-1"><span class="status-indicator bg-warning"></span> Risk Found
+                    </div>
+                    <div class="flex-item-center gap-1"><span class="status-indicator bg-danger"></span> Not Supported
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Req List -->
+                <div class="audit-list">
+                  <!-- Item 1 -->
+                  <div class="audit-item"
+                    style="flex-direction: column; align-items: stretch; border-bottom: 1px solid var(--color-surface-200); padding-bottom: var(--space-4);">
+                    <div class="flex-item-center" style="justify-content: space-between;">
+                      <div class="flex-item-center gap-3">
+                        <span class="badge" style="width: 40px; text-align: center;">1.1</span>
+                        <div>
+                          <div style="font-weight: 500;">Install and maintain a firewall</div>
+                          <div class="text-xs text-muted">Network Security</div>
+                        </div>
+                      </div>
+                      <div class="flex-item-center gap-4">
+                        <span class="badge badge-success">Fully Supported</span>
+                        <button class="btn btn-secondary text-xs"
+                          onclick="window.location.href='requirement-assessment.html'">View Details</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Item 2 -->
+                  <div class="audit-item"
+                    style="flex-direction: column; align-items: stretch; border-bottom: 1px solid var(--color-surface-200); padding-bottom: var(--space-4);">
+                    <div class="flex-item-center" style="justify-content: space-between;">
+                      <div class="flex-item-center gap-3">
+                        <span class="badge" style="width: 40px; text-align: center;">3.4</span>
+                        <div>
+                          <div style="font-weight: 500;">Render PAN unreadable</div>
+                          <div class="text-xs text-muted">Data Protection</div>
+                        </div>
+                      </div>
+                      <div class="flex-item-center gap-4">
+                        <span class="badge badge-success">Fully Supported</span>
+                        <button class="btn btn-secondary text-xs">View Details</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Item 3 -->
+                  <div class="audit-item"
+                    style="flex-direction: column; align-items: stretch; border-bottom: 1px solid var(--color-surface-200); padding-bottom: var(--space-4);">
+                    <div class="flex-item-center" style="justify-content: space-between;">
+                      <div class="flex-item-center gap-3">
+                        <span class="badge" style="width: 40px; text-align: center;">6.5</span>
+                        <div>
+                          <div style="font-weight: 500;">Address common coding vulnerabilities</div>
+                          <div class="text-xs text-muted">App Security</div>
+                        </div>
+                      </div>
+                      <div class="flex-item-center gap-4">
+                        <span class="badge badge-warning">Risk Identified</span>
+                        <button class="btn btn-secondary text-xs">View Details</button>
+                      </div>
+                    </div>
+                    <div
+                      style="margin-top: var(--space-2); background: #fff7ed; padding: var(--space-2); border-radius: var(--radius-md); font-size: var(--font-size-sm); color: #c2410c;">
+                      <strong>Automated Finding:</strong> Potential SQL Injection vulnerability detected in
+                      <code>QueryBuilder.java</code> line 42.
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Score Card & Actions -->
+        <div style="display: flex; flex-direction: column; gap: var(--space-6);">
+          <div class="score-card">
+            <div class="text-sm text-muted mb-2">Overall Score (PCI-DSS)</div>
+            <div class="score-grade A">A</div>
+            <div class="text-lg font-bold">95/100</div>
+            <div class="text-sm text-muted mt-2">Passing requirements</div>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">Evidence Summary</h3>
+            <div class="flex-item-center justify-between py-2 border-b border-surface-100">
+              <span class="text-sm">Automated Checks</span>
+              <span class="badge bg-surface-100">142 verified</span>
+            </div>
+            <div class="flex-item-center justify-between py-2 border-b border-surface-100">
+              <span class="text-sm">Questionnaire items</span>
+              <span class="badge bg-surface-100">25 answered</span>
+            </div>
+            <div class="flex-item-center justify-between py-2">
+              <span class="text-sm">Manual Overrides</span>
+              <span class="badge bg-surface-100">1 active</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

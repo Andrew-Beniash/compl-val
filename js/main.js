@@ -1,12 +1,13 @@
 /* ECMS Main Script */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Dropdown Logic
+    // Dropdown Logic (General for User and generic dropdowns)
     const initDropdowns = () => {
         const triggers = document.querySelectorAll('[data-dropdown-trigger]');
 
         triggers.forEach(trigger => {
             trigger.addEventListener('click', (e) => {
+                e.preventDefault();
                 e.stopPropagation();
                 const targetId = trigger.getAttribute('data-dropdown-trigger');
                 const menu = document.getElementById(targetId);
@@ -16,13 +17,59 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (m && m.id !== targetId) m.classList.remove('show');
                 });
 
+                // Close multi-selects
+                document.querySelectorAll('.multi-select-dropdown').forEach(m => m.classList.remove('show'));
+
+
                 if (menu) menu.classList.toggle('show');
             });
         });
 
-        // Click outside to close
-        document.addEventListener('click', () => {
-            document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
+        // Click outside to close all dropdowns
+        document.addEventListener('click', (e) => {
+            // Close generic dropdowns if click is outside
+            if (!e.target.closest('.dropdown-menu') && !e.target.closest('[data-dropdown-trigger]')) {
+                document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
+            }
+
+            // Close multi-selects if click is outside
+            if (!e.target.closest('.multi-select-container')) {
+                document.querySelectorAll('.multi-select-dropdown').forEach(m => m.classList.remove('show'));
+            }
+        });
+    };
+
+    // Multi-Select Logic
+    const initMultiSelect = () => {
+        const triggers = document.querySelectorAll('.multi-select-trigger');
+
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const container = trigger.closest('.multi-select-container');
+                const dropdown = container.querySelector('.multi-select-dropdown');
+
+                // Close others
+                document.querySelectorAll('.multi-select-dropdown').forEach(d => {
+                    if (d !== dropdown) d.classList.remove('show');
+                });
+                // Close regular dropdowns
+                document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
+
+                dropdown.classList.toggle('show');
+            });
+        });
+
+        // Checkbox click propagation stop
+        document.querySelectorAll('.multi-select-option').forEach(opt => {
+            opt.addEventListener('click', (e) => {
+                // Toggle checkbox if clicking label
+                if (e.target.type !== 'checkbox') {
+                    const cb = opt.querySelector('input[type="checkbox"]');
+                    if (cb) cb.checked = !cb.checked;
+                }
+                e.stopPropagation(); // Prevent dropdown from closing
+            });
         });
     };
 
@@ -108,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     initDropdowns();
+    initMultiSelect();
     initMobileNav();
     initTabs();
     initModals();

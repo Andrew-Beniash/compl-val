@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questionnaires | ECMS</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+  <div class="main-layout">
+    <header class="app-header">
+      <div class="container nav-container">
+        <div class="flex-item-center gap-2">
+          <button class="mobile-toggle"><span class="material-symbols-outlined">menu</span></button>
+          <a href="../dashboard.html" class="brand">
+            <span class="material-symbols-outlined brand-icon">verified_user</span> ECMS
+          </a>
+        </div>
+        <nav class="nav-links">
+          <a href="../dashboard.html" class="nav-link">Dashboard</a>
+          <a href="products-list.html" class="nav-link">Products</a>
+          <a href="frameworks-list.html" class="nav-link">Frameworks</a>
+          <a href="questionnaires-list.html" class="nav-link active">Questionnaires</a>
+          <a href="#" class="nav-link">Reports</a>
+          <a href="#" class="nav-link">Settings</a>
+        </nav>
+        <div class="user-profile">
+          <button class="avatar-btn" data-dropdown-trigger="user-dropdown">
+            <div class="avatar">JD</div>
+          </button>
+          <div id="user-dropdown" class="dropdown-menu">
+            <a href="login.html" class="dropdown-item" style="color: var(--color-danger);">Sign Out</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top: var(--space-8); padding-bottom: var(--space-8);">
+      <!-- Page Header -->
+      <div class="flex-item-center" style="justify-content: space-between; margin-bottom: var(--space-6);">
+        <div>
+          <nav class="breadcrumb">
+            <a href="../dashboard.html" class="breadcrumb-item">Dashboard</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-item active">Questionnaires</span>
+          </nav>
+          <h1>Questionnaire Management</h1>
+        </div>
+        <button class="btn btn-primary" onclick="window.location.href='questionnaire-add.html'">
+          <span class="material-symbols-outlined">add</span> Create Questionnaire
+        </button>
+      </div>
+
+      <!-- Filters -->
+      <div class="filter-bar">
+        <div class="search-input-wrapper">
+          <span class="material-symbols-outlined search-icon">search</span>
+          <input type="text" class="form-input search-input" placeholder="Search...">
+        </div>
+        <div style="min-width: 150px;">
+          <select class="form-select">
+            <option value="">Status: All</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Questionnaire Name</th>
+              <th>Target Products</th>
+              <th>Recipient Role</th>
+              <th>Schedule</th>
+              <th>Due Date</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Row 1 -->
+            <tr>
+              <td>
+                <a href="questionnaire-responses.html"
+                  style="font-weight: 500; color: var(--color-text-heading);">Annual Security Assessment 2026</a>
+                <div class="text-sm text-muted">Core Compliance Survey</div>
+              </td>
+              <td>
+                <div class="flex-item-center gap-2">
+                  <span class="badge" style="background: #e2e8f0;">3 Products</span>
+                </div>
+              </td>
+              <td>Product Manager</td>
+              <td>Annually</td>
+              <td class="text-muted">Mar 15, 2026</td>
+              <td><span class="badge badge-warning">Pending (2/3)</span></td>
+              <td>
+                <div class="flex-item-center gap-2" style="justify-content: flex-end;">
+                  <button class="btn btn-secondary text-xs" style="padding: 4px 8px;">Send Reminder</button>
+                  <button class="btn btn-icon-only" style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">more_vert</span></button>
+                </div>
+              </td>
+            </tr>
+            <!-- Row 2 -->
+            <tr>
+              <td>
+                <a href="#" style="font-weight: 500; color: var(--color-text-heading);">GDPR Data Mapping</a>
+                <div class="text-sm text-muted">Data Privacy Impact Assessment</div>
+              </td>
+              <td>
+                <div class="flex-item-center gap-2">
+                  <span class="badge" style="background: #e2e8f0;">All Products</span>
+                </div>
+              </td>
+              <td>System Architect</td>
+              <td>One-time</td>
+              <td class="text-muted">Feb 28, 2026</td>
+              <td><span class="badge badge-success">Completed</span></td>
+              <td>
+                <div class="flex-item-center gap-2" style="justify-content: flex-end;">
+                  <button class="btn btn-secondary text-xs" style="padding: 4px 8px;" disabled>Send Reminder</button>
+                  <button class="btn btn-icon-only" style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">more_vert</span></button>
+                </div>
+              </td>
+            </tr>
+            <!-- Row 3 -->
+            <tr>
+              <td>
+                <a href="#" style="font-weight: 500; color: var(--color-text-heading);">Q1 Vendor Review</a>
+              </td>
+              <td>
+                <div class="flex-item-center gap-2">
+                  <span class="badge" style="background: #e2e8f0;">Legacy Billing</span>
+                </div>
+              </td>
+              <td>Vendor Manager</td>
+              <td>Quarterly</td>
+              <td class="text-muted">Mar 31, 2026</td>
+              <td><span class="badge" style="background: var(--color-surface-200);">Draft</span></td>
+              <td>
+                <div class="flex-item-center gap-2" style="justify-content: flex-end;">
+                  <button class="btn btn-icon-only" style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">edit</span></button>
+                  <button class="btn btn-icon-only" style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">more_vert</span></button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>
