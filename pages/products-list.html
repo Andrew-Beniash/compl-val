@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | ECMS</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+  <div class="main-layout">
+    <!-- Header (Simplified Copy of Dashboard Header for Prototype) -->
+    <header class="app-header">
+      <div class="container nav-container">
+        <div class="flex-item-center gap-2">
+          <button class="mobile-toggle"><span class="material-symbols-outlined">menu</span></button>
+          <a href="../dashboard.html" class="brand">
+            <span class="material-symbols-outlined brand-icon">verified_user</span> ECMS
+          </a>
+        </div>
+        <nav class="nav-links">
+          <a href="../dashboard.html" class="nav-link">Dashboard</a>
+          <a href="products-list.html" class="nav-link active">Products</a>
+          <a href="#" class="nav-link">Frameworks</a>
+          <a href="#" class="nav-link">Questionnaires</a>
+          <a href="#" class="nav-link">Reports</a>
+          <a href="#" class="nav-link">Settings</a>
+        </nav>
+        <div class="user-profile">
+          <button class="avatar-btn" data-dropdown-trigger="user-dropdown">
+            <div class="avatar">JD</div>
+          </button>
+          <div id="user-dropdown" class="dropdown-menu">
+            <a href="login.html" class="dropdown-item" style="color: var(--color-danger);">Sign Out</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top: var(--space-8); padding-bottom: var(--space-8);">
+      <!-- Page Header -->
+      <div class="flex-item-center" style="justify-content: space-between; margin-bottom: var(--space-6);">
+        <div>
+          <nav class="breadcrumb">
+            <a href="../dashboard.html" class="breadcrumb-item">Dashboard</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-item active">Products</span>
+          </nav>
+          <h1>Product Registry</h1>
+        </div>
+        <button class="btn btn-primary" onclick="window.location.href='product-add.html'">
+          <span class="material-symbols-outlined">add</span> New Product
+        </button>
+      </div>
+
+      <!-- Filters -->
+      <div class="filter-bar">
+        <div class="search-input-wrapper">
+          <span class="material-symbols-outlined search-icon">search</span>
+          <input type="text" class="form-input search-input" placeholder="Search products...">
+        </div>
+        <div style="min-width: 150px;">
+          <select class="form-select">
+            <option value="">All Types</option>
+            <option value="internal">Internal</option>
+            <option value="3rd-party">3rd Party</option>
+          </select>
+        </div>
+        <div style="min-width: 150px;">
+          <select class="form-select">
+            <option value="">All Statuses</option>
+            <option value="in-use">In Use</option>
+            <option value="consideration">Consideration</option>
+          </select>
+        </div>
+        <button class="btn btn-secondary btn-icon-only"><span
+            class="material-symbols-outlined">filter_list</span></button>
+      </div>
+
+      <!-- Products Table -->
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Frameworks</th>
+              <th>Compliance Score</th>
+              <th>Last Scan</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Mock Data Row 1 -->
+            <tr>
+              <td>
+                <a href="product-detail.html" style="font-weight: 500; color: var(--color-text-heading);">Payment
+                  Gateway SDK</a>
+                <div class="text-sm text-muted">v2.4.1</div>
+              </td>
+              <td><span class="badge" style="background: #f1f5f9; color: #475569;">Internal</span></td>
+              <td><span class="badge badge-success">In Use</span></td>
+              <td>
+                <div class="flex-item-center gap-2">
+                  <span class="badge" style="border: 1px solid #cbd5e1;">PCI-DSS</span>
+                </div>
+              </td>
+              <td>
+                <div class="flex-item-center gap-2">
+                  <div style="width: 80px; height: 6px; background: #e2e8f0; border-radius: 4px;">
+                    <div style="width: 95%; height: 100%; background: var(--color-success); border-radius: 4px;"></div>
+                  </div>
+                  <span style="font-size: 12px; font-weight: 600;">95%</span>
+                </div>
+              </td>
+              <td class="text-muted">2 hours ago</td>
+              <td>
+                <div class="flex-item-center gap-2" style="justify-content: flex-end;">
+                  <button class="btn btn-icon-only" style="padding: 4px;"
+                    onclick="window.location.href='product-edit.html'"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">edit</span></button>
+                  <button class="btn btn-icon-only" style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">delete</span></button>
+                </div>
+              </td>
+            </tr>
+            <!-- Mock Data Row 2 -->
+            <tr>
+              <td>
+                <a href="product-detail.html" style="font-weight: 500; color: var(--color-text-heading);">Customer Data
+                  Platform</a>
+                <div class="text-sm text-muted">v1.0.5</div>
+              </td>
+              <td><span class="badge" style="background: #f1f5f9; color: #475569;">Internal</span></td>
+              <td><span class="badge badge-success">In Use</span></td>
+              <td>
+                <div class="flex-item-center gap-2">
+                  <span class="badge" style="border: 1px solid #cbd5e1;">GDPR</span>
+                  <span class="badge" style="border: 1px solid #cbd5e1;">SOC 2</span>
+                </div>
+              </td>
+              <td>
+                <div class="flex-item-center gap-2">
+                  <div style="width: 80px; height: 6px; background: #e2e8f0; border-radius: 4px;">
+                    <div style="width: 70%; height: 100%; background: var(--color-warning); border-radius: 4px;"></div>
+                  </div>
+                  <span style="font-size: 12px; font-weight: 600;">70%</span>
+                </div>
+              </td>
+              <td class="text-muted">Jan 30</td>
+              <td>
+                <div class="flex-item-center gap-2" style="justify-content: flex-end;">
+                  <button class="btn btn-icon-only" style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">edit</span></button>
+                  <button class="btn btn-icon-only" style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">delete</span></button>
+                </div>
+              </td>
+            </tr>
+            <!-- Mock Data Row 3 -->
+            <tr>
+              <td>
+                <a href="#" style="font-weight: 500; color: var(--color-text-heading);">Auth Service</a>
+                <div class="text-sm text-muted">v3.1.0</div>
+              </td>
+              <td><span class="badge" style="background: #f1f5f9; color: #475569;">Internal</span></td>
+              <td><span class="badge badge-warning">Review</span></td>
+              <td>
+                <div class="flex-item-center gap-2">
+                  <span class="badge" style="border: 1px solid #cbd5e1;">SOC 2</span>
+                </div>
+              </td>
+              <td>
+                <div class="flex-item-center gap-2">
+                  <div style="width: 80px; height: 6px; background: #e2e8f0; border-radius: 4px;">
+                    <div style="width: 45%; height: 100%; background: var(--color-danger); border-radius: 4px;"></div>
+                  </div>
+                  <span style="font-size: 12px; font-weight: 600;">45%</span>
+                </div>
+              </td>
+              <td class="text-muted">Jan 28</td>
+              <td>
+                <div class="flex-item-center gap-2" style="justify-content: flex-end;">
+                  <button class="btn btn-icon-only" style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">edit</span></button>
+                  <button class="btn btn-icon-only" style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">delete</span></button>
+                </div>
+              </td>
+            </tr>
+            <!-- Mock Rows 4-6 -->
+            <tr>
+              <td><a href="#" style="font-weight: 500; color: var(--color-text-heading);">Analytics Engine</a>
+                <div class="text-sm text-muted">v4.0.0</div>
+              </td>
+              <td><span class="badge" style="background: #f1f5f9; color: #475569;">3rd-Party</span></td>
+              <td><span class="badge badge-success">In Use</span></td>
+              <td><span class="badge" style="border: 1px solid #cbd5e1;">GDPR</span></td>
+              <td>
+                <div class="flex-item-center gap-2">
+                  <div style="width: 80px; height: 6px; background: #e2e8f0; border-radius: 4px;">
+                    <div style="width: 88%; height: 100%; background: var(--color-success); border-radius: 4px;"></div>
+                  </div><span style="font-size: 12px; font-weight: 600;">88%</span>
+                </div>
+              </td>
+              <td class="text-muted">Jan 15</td>
+              <td>
+                <div class="flex-item-center gap-2" style="justify-content: flex-end;"><button class="btn btn-icon-only"
+                    style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">edit</span></button><button class="btn btn-icon-only"
+                    style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">delete</span></button></div>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="#" style="font-weight: 500; color: var(--color-text-heading);">Legacy Billing</a>
+                <div class="text-sm text-muted">v1.2</div>
+              </td>
+              <td><span class="badge" style="background: #f1f5f9; color: #475569;">Internal</span></td>
+              <td><span class="badge badge-danger">Deprecated</span></td>
+              <td><span class="badge" style="border: 1px solid #cbd5e1;">PCI-DSS</span></td>
+              <td>
+                <div class="flex-item-center gap-2">
+                  <div style="width: 80px; height: 6px; background: #e2e8f0; border-radius: 4px;">
+                    <div style="width: 30%; height: 100%; background: var(--color-danger); border-radius: 4px;"></div>
+                  </div><span style="font-size: 12px; font-weight: 600;">30%</span>
+                </div>
+              </td>
+              <td class="text-muted">Dec 20</td>
+              <td>
+                <div class="flex-item-center gap-2" style="justify-content: flex-end;"><button class="btn btn-icon-only"
+                    style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">edit</span></button><button class="btn btn-icon-only"
+                    style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">delete</span></button></div>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="#" style="font-weight: 500; color: var(--color-text-heading);">Marketing Site</a>
+                <div class="text-sm text-muted">v5.1.0</div>
+              </td>
+              <td><span class="badge" style="background: #f1f5f9; color: #475569;">Internal</span></td>
+              <td><span class="badge badge-success">In Use</span></td>
+              <td><span class="badge" style="border: 1px solid #cbd5e1;">None</span></td>
+              <td><span class="text-muted" style="font-size: 12px;">N/A</span></td>
+              <td class="text-muted">Jan 05</td>
+              <td>
+                <div class="flex-item-center gap-2" style="justify-content: flex-end;"><button class="btn btn-icon-only"
+                    style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">edit</span></button><button class="btn btn-icon-only"
+                    style="padding: 4px;"><span class="material-symbols-outlined"
+                      style="font-size: 18px;">delete</span></button></div>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+        <div class="pagination">
+          <button class="page-btn" disabled>Previous</button>
+          <div class="flex-item-center gap-2">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+          </div>
+          <button class="page-btn">Next</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

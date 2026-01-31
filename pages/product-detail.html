@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Gateway SDK | ECMS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+  <div class="main-layout">
+    <header class="app-header">
+      <div class="container nav-container">
+        <div class="flex-item-center gap-2">
+          <button class="mobile-toggle"><span class="material-symbols-outlined">menu</span></button>
+          <a href="../dashboard.html" class="brand">
+            <span class="material-symbols-outlined brand-icon">verified_user</span> ECMS
+          </a>
+        </div>
+        <nav class="nav-links">
+          <a href="../dashboard.html" class="nav-link">Dashboard</a>
+          <a href="products-list.html" class="nav-link active">Products</a>
+          <a href="#" class="nav-link">Frameworks</a>
+          <a href="#" class="nav-link">Questionnaires</a>
+          <a href="#" class="nav-link">Reports</a>
+          <a href="#" class="nav-link">Settings</a>
+        </nav>
+        <div class="user-profile">
+          <button class="avatar-btn" data-dropdown-trigger="user-dropdown">
+            <div class="avatar">JD</div>
+          </button>
+          <div id="user-dropdown" class="dropdown-menu">
+            <a href="login.html" class="dropdown-item" style="color: var(--color-danger);">Sign Out</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top: var(--space-8); padding-bottom: var(--space-8);">
+      <!-- Header -->
+      <div class="flex-item-center"
+        style="justify-content: space-between; margin-bottom: var(--space-6); flex-wrap: wrap; gap: var(--space-4);">
+        <div>
+          <nav class="breadcrumb">
+            <a href="../dashboard.html" class="breadcrumb-item">Dashboard</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="products-list.html" class="breadcrumb-item">Products</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-item active">Payment Gateway SDK</span>
+          </nav>
+          <div class="flex-item-center gap-2">
+            <h1>Payment Gateway SDK</h1>
+            <span class="badge badge-success">In Use</span>
+          </div>
+        </div>
+        <div class="flex-item-center gap-2">
+          <button class="btn btn-secondary">
+            <span class="material-symbols-outlined">refresh</span> Run Analysis
+          </button>
+          <button class="btn btn-secondary" onclick="window.location.href='product-edit.html'">
+            <span class="material-symbols-outlined">edit</span> Edit
+          </button>
+          <button class="btn btn-primary">
+            <span class="material-symbols-outlined">download</span> Download Report
+          </button>
+        </div>
+      </div>
+
+      <!-- Content Grid -->
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-6);">
+
+        <!-- Left: Compliance & Analysis -->
+        <div>
+          <!-- Compliance Status Tabs -->
+          <div class="card" style="margin-bottom: var(--space-6);">
+            <div class="tabs-container">
+              <div class="tabs">
+                <button class="tab-btn active" data-tab="pci-dss">PCI-DSS</button>
+                <button class="tab-btn" data-tab="gdpr">GDPR</button>
+                <button class="tab-btn" data-tab="soc2">SOC 2</button>
+              </div>
+
+              <!-- Tab Content: PCI-DSS -->
+              <div id="pci-dss" class="tab-content active">
+                <div class="flex-item-center" style="justify-content: space-between; margin-bottom: var(--space-4);">
+                  <h3 style="font-size: var(--font-size-lg);">Overall Compliance: 95%</h3>
+                  <span class="badge badge-success">Passing</span>
+                </div>
+                <div
+                  style="background: var(--color-surface-50); height: 8px; border-radius: 4px; margin-bottom: var(--space-6);">
+                  <div style="width: 95%; height: 100%; background: var(--color-success); border-radius: 4px;"></div>
+                </div>
+
+                <h4 style="margin-bottom: var(--space-4);">Requirements Breakdown</h4>
+                <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+                  <!-- Requirement Item -->
+                  <div
+                    style="border: 1px solid var(--color-surface-200); border-radius: var(--radius-md); padding: var(--space-4);">
+                    <div class="flex-item-center"
+                      style="justify-content: space-between; margin-bottom: var(--space-2);">
+                      <div class="flex-item-center gap-2">
+                        <span class="material-symbols-outlined" style="color: var(--color-success);">check_circle</span>
+                        <span style="font-weight: 500;">Req 3.4: Render PAN unreadable</span>
+                      </div>
+                      <button class="btn btn-icon-only" style="padding: 2px;"><span class="material-symbols-outlined"
+                          style="font-size: 1.25rem;">expand_more</span></button>
+                    </div>
+                    <p class="text-sm text-muted" style="margin-left: 28px;">Verified encryption implementation in
+                      <code>EncryptionService.java</code>.
+                    </p>
+                  </div>
+
+                  <!-- Requirement Item -->
+                  <div
+                    style="border: 1px solid var(--color-surface-200); border-radius: var(--radius-md); padding: var(--space-4);">
+                    <div class="flex-item-center"
+                      style="justify-content: space-between; margin-bottom: var(--space-2);">
+                      <div class="flex-item-center gap-2">
+                        <span class="material-symbols-outlined" style="color: var(--color-warning);">warning</span>
+                        <span style="font-weight: 500;">Req 6.5: Coding vulnerabilities</span>
+                      </div>
+                      <button class="btn btn-icon-only" style="padding: 2px;"><span class="material-symbols-outlined"
+                          style="font-size: 1.25rem;">expand_more</span></button>
+                    </div>
+                    <p class="text-sm text-muted" style="margin-left: 28px;">Static analysis detected 2 potential issues
+                      in dependency <code>log4j-core</code>.</p>
+                    <div style="margin-left: 28px; margin-top: var(--space-2);">
+                      <button class="btn btn-secondary" style="padding: 4px 8px; font-size: 12px;">Override
+                        Status</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Analysis Timeline -->
+          <div class="card">
+            <h3 class="card-title">Analysis History</h3>
+            <div class="timeline" style="margin-top: var(--space-4);">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Today, 09:42 AM</div>
+                <div style="font-weight: 500;">Automated CI/CD Scan (v2.4.1)</div>
+                <div class="text-sm text-muted">Analysis complete. Score: 95%</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"
+                  style="background: var(--color-surface-200); border-color: var(--color-surface-300);"></div>
+                <div class="timeline-date">Jan 15, 2026</div>
+                <div style="font-weight: 500;">Questionnaire Submitted</div>
+                <div class="text-sm text-muted">Response received from Sarah Connor (PM).</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"
+                  style="background: var(--color-surface-200); border-color: var(--color-surface-300);"></div>
+                <div class="timeline-date">Jan 10, 2026</div>
+                <div style="font-weight: 500;">Manual Override</div>
+                <div class="text-sm text-muted">Req 1.2 marked as Compliant by Admin.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Meta Info -->
+        <div style="display: flex; flex-direction: column; gap: var(--space-6);">
+          <div class="card">
+            <h3 class="card-title">Product Details</h3>
+            <div style="display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-4);">
+              <div>
+                <label class="text-sm text-muted">Description</label>
+                <p class="text-sm">Core payment processing library used by all consumer-facing applications.</p>
+              </div>
+              <div>
+                <label class="text-sm text-muted">Product Type</label>
+                <p class="text-sm">Internal Library</p>
+              </div>
+              <div>
+                <label class="text-sm text-muted">Repository</label>
+                <a href="#" class="link-primary flex-item-center gap-2 text-sm">
+                  <span class="material-symbols-outlined" style="font-size: 1rem;">code</span>
+                  github.com/org/payment-sdk
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">Contacts</h3>
+            <div style="display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-4);">
+              <div class="flex-item-center gap-2">
+                <div class="avatar" style="width: 32px; height: 32px; font-size: 12px;">SC</div>
+                <div>
+                  <div class="text-sm" style="font-weight: 500;">Sarah Connor</div>
+                  <div class="text-sm text-muted">Product Manager</div>
+                </div>
+              </div>
+              <div class="flex-item-center gap-2">
+                <div class="avatar"
+                  style="width: 32px; height: 32px; font-size: 12px; background: #e0f2fe; color: #0284c7;">TR</div>
+                <div>
+                  <div class="text-sm" style="font-weight: 500;">Tony Rogers</div>
+                  <div class="text-sm text-muted">System Architect</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

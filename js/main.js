@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Close others
                 document.querySelectorAll('.dropdown-menu').forEach(m => {
-                    if (m.id !== targetId) m.classList.remove('show');
+                    if (m && m.id !== targetId) m.classList.remove('show');
                 });
 
-                menu.classList.toggle('show');
+                if (menu) menu.classList.toggle('show');
             });
         });
 
@@ -54,6 +54,61 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Tab Logic
+    const initTabs = () => {
+        const tabBtns = document.querySelectorAll('.tab-btn');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.getAttribute('data-tab');
+                const parent = btn.closest('.tabs-container'); // Optional scoping
+
+                // Find all tabs in the same group
+                const groupBtns = parent ? parent.querySelectorAll('.tab-btn') : document.querySelectorAll(`[data-tab]`);
+                const groupContents = parent ? parent.querySelectorAll('.tab-content') : document.querySelectorAll('.tab-content');
+
+                // Deactivate all
+                groupBtns.forEach(b => b.classList.remove('active'));
+                groupContents.forEach(c => c.classList.remove('active'));
+
+                // Activate selected
+                btn.classList.add('active');
+                const target = document.getElementById(targetId);
+                if (target) target.classList.add('active');
+            });
+        });
+    };
+
+    // Modal Logic
+    const initModals = () => {
+        // Open Triggers
+        document.querySelectorAll('[data-modal-target]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = btn.getAttribute('data-modal-target');
+                const modal = document.getElementById(targetId);
+                if (modal) modal.classList.add('open');
+            });
+        });
+
+        // Close Triggers
+        document.querySelectorAll('[data-modal-close]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const modal = btn.closest('.modal-overlay');
+                if (modal) modal.classList.remove('open');
+            });
+        });
+
+        // Close on Click Outside
+        document.querySelectorAll('.modal-overlay').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.classList.remove('open');
+            });
+        });
+    };
+
     initDropdowns();
     initMobileNav();
+    initTabs();
+    initModals();
 });

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard - ECMS">
+  <title>Dashboard | ECMS</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="main-layout">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="container nav-container">
+        <div class="flex-item-center gap-2">
+          <button class="mobile-toggle" aria-label="Toggle Navigation">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <a href="dashboard.html" class="brand">
+            <span class="material-symbols-outlined brand-icon">verified_user</span>
+            ECMS
+          </a>
+        </div>
+
+        <nav class="nav-links">
+          <a href="dashboard.html" class="nav-link active">Dashboard</a>
+          <a href="#" class="nav-link">Products</a>
+          <a href="#" class="nav-link">Frameworks</a>
+          <a href="#" class="nav-link">Questionnaires</a>
+          <a href="#" class="nav-link">Reports</a>
+          <a href="#" class="nav-link">Settings</a>
+        </nav>
+
+        <div class="user-profile">
+          <button class="btn btn-icon-only" aria-label="Notifications">
+            <span class="material-symbols-outlined">notifications</span>
+          </button>
+          <!-- User Dropdown Trigger -->
+          <button class="avatar-btn" data-dropdown-trigger="user-dropdown">
+            <div class="avatar">JD</div>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div id="user-dropdown" class="dropdown-menu">
+            <div
+              style="padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--color-surface-100); margin-bottom: var(--space-1);">
+              <div style="font-weight: 600; font-size: var(--font-size-sm);">John Doe</div>
+              <div style="font-size: var(--font-size-xs); color: var(--text-muted);">Admin</div>
+            </div>
+            <a href="#" class="dropdown-item">
+              <span class="material-symbols-outlined" style="font-size: 1.25rem;">account_circle</span>
+              Profile
+            </a>
+            <a href="#" class="dropdown-item">
+              <span class="material-symbols-outlined" style="font-size: 1.25rem;">settings</span>
+              Preferences
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="pages/login.html" class="dropdown-item" style="color: var(--color-danger);">
+              <span class="material-symbols-outlined" style="font-size: 1.25rem;">logout</span>
+              Sign Out
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container" style="padding-top: var(--space-8); padding-bottom: var(--space-8);">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#" class="breadcrumb-item">Home</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-item active" aria-current="page">Dashboard</span>
+      </nav>
+
+      <div class="flex-item-center"
+        style="justify-content: space-between; margin-bottom: var(--space-6); flex-wrap: wrap; gap: var(--space-4);">
+        <div>
+          <h1 style="margin-bottom: var(--space-2);">Compliance Overview</h1>
+          <p class="text-muted">Welcome back, John. Here is the latest compliance status.</p>
+        </div>
+        <!-- Quick Actions -->
+        <div class="quick-actions-bar" style="margin-bottom: 0;">
+          <button class="btn btn-secondary">
+            <span class="material-symbols-outlined">add_task</span>
+            Assign Questionnaire
+          </button>
+          <button class="btn btn-primary">
+            <span class="material-symbols-outlined">add_circle</span>
+            New Product
+          </button>
+        </div>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="dashboard-grid">
+        <!-- Total Products -->
+        <div class="card">
+          <div class="card-header">
+            <span class="text-sm text-muted">Total Products</span>
+            <span class="material-symbols-outlined text-muted">inventory_2</span>
+          </div>
+          <div
+            style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--color-primary);">
+            24</div>
+          <p class="text-sm text-muted mt-4"><span style="color: var(--color-success); font-weight: 500;">+2</span> new
+            this month</p>
+        </div>
+
+        <!-- Compliance Chart -->
+        <div class="card">
+          <div class="card-header" style="margin-bottom: 0;">
+            <span class="text-sm text-muted">Overall Readiness</span>
+            <span class="material-symbols-outlined text-muted">donut_large</span>
+          </div>
+          <div class="chart-widget">
+            <div class="chart-donut">
+              <div class="chart-center">
+                <span style="font-size: var(--font-size-2xl); font-weight: bold;">92%</span>
+                <span style="font-size: var(--font-size-xs); color: #64748b;">Passing</span>
+              </div>
+            </div>
+          </div>
+          <div class="chart-legend">
+            <div class="legend-item">
+              <div class="dot" style="background: var(--color-success);"></div> Pass
+            </div>
+            <div class="legend-item">
+              <div class="dot" style="background: var(--color-warning);"></div> Risk
+            </div>
+            <div class="legend-item">
+              <div class="dot" style="background: var(--color-danger);"></div> Fail
+            </div>
+          </div>
+        </div>
+
+        <!-- Pending Questionnaires -->
+        <div class="card">
+          <div class="card-header">
+            <span class="text-sm text-muted">Pending Questionnaires</span>
+            <span class="material-symbols-outlined text-muted">pending_actions</span>
+          </div>
+          <div
+            style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--color-warning);">
+            5</div>
+          <p class="text-sm text-muted mt-4">2 overdue</p>
+          <button class="btn btn-secondary"
+            style="width: 100%; margin-top: var(--space-4); font-size: var(--font-size-xs);">Send Reminders</button>
+        </div>
+
+        <!-- Critical Alerts -->
+        <div class="card">
+          <div class="card-header">
+            <span class="text-sm text-muted">Critical Issues</span>
+            <span class="material-symbols-outlined text-muted">gpp_maybe</span>
+          </div>
+          <div
+            style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--color-danger);">3
+          </div>
+          <p class="text-sm text-muted mt-4">Requires immediate attention</p>
+        </div>
+      </div>
+
+      <!-- Recent Activity List -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Recent Analysis Activity</h3>
+          <button class="btn btn-secondary text-sm">View All History</button>
+        </div>
+
+        <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+          <thead>
+            <tr style="text-align: left; border-bottom: 2px solid var(--color-surface-200);">
+              <th
+                style="padding: var(--space-3); font-size: var(--font-size-xs); color: var(--color-text-heading); text-transform: uppercase;">
+                Product</th>
+              <th
+                style="padding: var(--space-3); font-size: var(--font-size-xs); color: var(--color-text-heading); text-transform: uppercase;">
+                Trigger</th>
+              <th
+                style="padding: var(--space-3); font-size: var(--font-size-xs); color: var(--color-text-heading); text-transform: uppercase;">
+                Status</th>
+              <th
+                style="padding: var(--space-3); font-size: var(--font-size-xs); color: var(--color-text-heading); text-transform: uppercase;">
+                Detected Issues</th>
+              <th
+                style="padding: var(--space-3); font-size: var(--font-size-xs); color: var(--color-text-heading); text-transform: uppercase;">
+                Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--color-surface-100);">
+              <td style="padding: var(--space-4) var(--space-3);">
+                <div style="font-weight: 500;">Payment Gateway SDK</div>
+                <div class="text-sm text-muted">v2.4.1</div>
+              </td>
+              <td style="padding: var(--space-3); font-size: var(--font-size-sm);">CI/CD Pipeline</td>
+              <td style="padding: var(--space-3);"><span class="badge badge-success">Passed</span></td>
+              <td style="padding: var(--space-3); font-size: var(--font-size-sm);">0</td>
+              <td style="padding: var(--space-3);" class="text-muted text-sm">Today, 09:42 AM</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--color-surface-100);">
+              <td style="padding: var(--space-4) var(--space-3);">
+                <div style="font-weight: 500;">Customer Data Platform</div>
+                <div class="text-sm text-muted">v1.0.5</div>
+              </td>
+              <td style="padding: var(--space-3); font-size: var(--font-size-sm);">Manual Scan</td>
+              <td style="padding: var(--space-3);"><span class="badge badge-warning">Warning</span></td>
+              <td style="padding: var(--space-3); font-size: var(--font-size-sm);">2 Low Risk</td>
+              <td style="padding: var(--space-3);" class="text-muted text-sm">Jan 30, 2026</td>
+            </tr>
+            <tr>
+              <td style="padding: var(--space-4) var(--space-3);">
+                <div style="font-weight: 500;">Auth Service</div>
+                <div class="text-sm text-muted">v3.1.0</div>
+              </td>
+              <td style="padding: var(--space-3); font-size: var(--font-size-sm);">Scheduled</td>
+              <td style="padding: var(--space-3);"><span class="badge badge-danger">Failed</span></td>
+              <td style="padding: var(--space-3); font-size: var(--font-size-sm);">1 Critical</td>
+              <td style="padding: var(--space-3);" class="text-muted text-sm">Jan 28, 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      style="border-top: 1px solid var(--color-surface-300); padding: var(--space-6) 0; margin-top: auto; background-color: white;">
+      <div class="container text-center text-muted text-sm">
+        &copy; 2026 Enterprise Compliance Management System. v1.0.0
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
